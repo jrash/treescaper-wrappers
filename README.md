@@ -1,6 +1,6 @@
 # treescaper-wrappers
 
-Collection of scripts for analyzing sets of trees with treescaper.  These scripts were used to conduct the analyses described in this [poster] presentation (https://www.math.fsu.edu/~whuang2/pdf/JRAposterEvolution2014Final.pdf) given at the Evolution conference in Raleigh, NC on June, 2014. 
+Collection of scripts for analyzing sets of trees with treescaper.  These scripts were used to conduct the analyses described in this [poster](https://www.math.fsu.edu/~whuang2/pdf/JRAposterEvolution2014Final.pdf) presentation given at the Evolution conference in Raleigh, NC on June, 2014. 
 
 ## treescaperWrapperKnownPlateau.py
 
