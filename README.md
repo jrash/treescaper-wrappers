@@ -1,8 +1,16 @@
 # treescaper-wrappers
 
+See Genevieve Mount's updates to this workflow [here](https://github.com/jrash/TreeScaper_wrappers_2017).
+
 Collection of scripts for analyzing sets of trees with treescaper.  These scripts were used to conduct the analyses described in this [poster](https://www.math.fsu.edu/~whuang2/pdf/JRAposterEvolution2014Final.pdf) presentation given at the Evolution conference in Raleigh, NC on June, 2014. 
 
+## treescaperWrapperV2.py
+
+Runs community detection on the tree set with range of lambda values specified. Finds the plateau of communities detected and prints to ouput files. The input tree set needs to be a newick file named "all_trees.new". The lambda ranges and increments may need to be changed for affinity and covariance community detection. These sections are marked in the main() function.
+
 ## treescaperWrapperKnownPlateau.py
+
+Useful if you have found the plateau with the automatic search function of the treescaper GUI.  If you enter the lambda values where the plateau was found for both affinity and covariance matrices, you will get all the useful output of treescaperWrapperV2.py.  See treescaperWrapperV2.py for usage and output.
 
 Usage: treescaperWrapperKnownPlateau.py [model] [plateau] [network] [rooted]
  * [model] can be CNM/CPM/ERNM/NNM
@@ -10,10 +18,7 @@ Usage: treescaperWrapperKnownPlateau.py [model] [plateau] [network] [rooted]
  * [network] can be Covariance or Affinity
  * [rooted] is binary
 
-Useful if you have found the plateau with the automatic search function of the treescaper GUI.  If you enter the lambda values where the plateau was found for
-both affinity and covariance matrices, you will get all the useful output of treescaperWrapperV2.py.  See treescaperWrapperV2.py for usage and output.
-
-output files
+Output files:
 
  * ['treeset']_['type']WholeCommunity_results.out: community results over the whole range of lambda values
   
@@ -29,7 +34,7 @@ output files
 
 # Example worklow
 
-Below is a typical workflow, which was used to generate the output files in this repository.
+Below is a typical workflow to run in a bash shell. This was used to generate the output files in the repository.
 
 ```
 CLVTreeScaper -trees -f all_trees.nex -ft Trees -w 0 -r 0 -o Community -t Covariance -cm CPM -lm auto -hf .95 -lf .05 > all_trees_CovAuto.out
