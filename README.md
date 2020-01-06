@@ -79,7 +79,7 @@ Output files:
 * AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
 * AffinityCommunitiesTreeCount.txt: a file to count the frequency and relative frequency of trees in each affinity community
 
-# Example worklow
+# Example workflow
 
 Below is a typical workflow to run in a bash shell. This was used to generate the output files in the repository.
 
