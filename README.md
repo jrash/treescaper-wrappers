@@ -8,15 +8,10 @@ Collection of scripts for analyzing sets of trees with treescaper.  These script
 
 Runs community detection on the tree set with range of lambda values specified. Finds the plateau of communities detected and prints to ouput files. The input tree set needs to be a newick file named "all_trees.new". The lambda ranges and increments may need to be changed for affinity and covariance community detection. These sections are marked in the main() function.
 
-## treescaperWrapperKnownPlateau.py
-
-Useful if you have found the plateau with the automatic search function of the treescaper GUI.  If you enter the lambda values where the plateau was found for both affinity and covariance matrices, you will get all the useful output of treescaperWrapperV2.py.  See treescaperWrapperV2.py for usage and output.
-
-Usage: treescaperWrapperKnownPlateau.py [model] [plateau] [network] [rooted]
+Usage: treescaperWrapperV2.py [model] [interval] [network]
  * [model] can be CNM/CPM/ERNM/NNM
- * [plateau] is a numeric lambda value
+ * [interval] size of the lambda intervals in the grid search
  * [network] can be Covariance or Affinity
- * [rooted] is binary
 
 Output files:
 
@@ -31,6 +26,31 @@ Output files:
  * AffinityCom[number].nex.con: consensus tree of an affinity community
  * AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
 
+
+## treescaperWrapperKnownPlateau.py
+
+Useful if you have found the plateau with the automatic search function of the treescaper GUI.  If you enter the lambda values where the plateau was found for both affinity and covariance matrices, you will get all the useful output files of treescaperWrapperV2.py.
+
+Usage: treescaperWrapperKnownPlateau.py [model] [plateau] [network] [rooted]
+ * [model] can be CNM/CPM/ERNM/NNM
+ * [plateau] is a numeric lambda value
+ * [network] can be Covariance or Affinity
+ * [rooted] is binary
+
+Output files: same as treescaperWrapperV2.py
+
+## AffinityCommunities.py 
+
+Usage: AffinityCommunities.py 'Path/To/Treeset' [model] [plateau]
+ * [model] can be CNM/CPM/ERNM/NNM
+ * [plateau] is a numeric lambda value
+
+Output files:
+
+AffinityCom[number].nex: a nexus file of the trees in an affinity community
+AffinityCom[number].nex.con: consensus tree of an affinity community
+AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
+AffinityCommunitiesTreeCount.txt: a file to count the frequency and relative frequency of trees in each affinity community
 
 # Example worklow
 
