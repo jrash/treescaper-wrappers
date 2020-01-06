@@ -7,7 +7,7 @@ Collection of scripts for analyzing sets of trees with treescaper.  These script
 Usage: treescaperWrapperKnownPlateau.py [model] [plateau] [network] [rooted]
  * [model] can be CNM/CPM/ERNM/NNM
  * [plateau] is a numeric lambda value
- * ['network'] can be Covariance or Affinity
+ * [network] can be Covariance or Affinity
  * [rooted] is binary
 
 Useful if you have found the plateau with the automatic search function of the treescaper GUI.  If you enter the lambda values where the plateau was found for
@@ -25,3 +25,18 @@ output files
  * AffinityCom[number].nex: a nexus file of the trees in an affinity community
  * AffinityCom[number].nex.con: consensus tree of an affinity community
  * AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
+
+
+# Example worklow
+
+Below is a typical workflow, which was used to generate the output files in this repository.
+
+```
+CLVTreeScaper -trees -f all_trees.nex -ft Trees -w 0 -r 0 -o Community -t Covariance -cm CPM -lm auto -hf .95 -lf .05 > all_trees_CovAuto.out
+CLVTreeScaper -trees -f all_trees.nex  -ft Trees -w 0 -r 0 -o BipartMatrix -bfm matrix 
+CLVTreeScaper -trees -f all_trees.nex -ft Trees -w 0 -r 0 -o Community -t Affinity -cm CPM -lm auto -dm URF -am Exp > all_trees_AffAuto.out
+
+treescaperWrapperKnownPlateau.py CPM .06 Covariance 1
+treescaperWrapperKnownPlateau.py CPM .06 Affinity 1
+```
+
