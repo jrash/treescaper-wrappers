@@ -6,7 +6,7 @@ Collection of scripts for analyzing sets of trees with treescaper.  These script
 
 ## treescaperWrapperV2.py
 
-Runs community detection on the tree set with range of lambda values specified. Finds the plateau of communities detected and prints to ouput files. The input tree set needs to be a newick file named "all_trees.new". The lambda ranges and increments may need to be changed for affinity and covariance community detection. These sections are marked in the main() function.
+Runs community detection on the tree set with range of lambda values specified. Finds the plateau of communities detected and prints to ouput files. The input tree set needs to be a newick file named "all_trees.new".
 
 Usage: treescaperWrapperV2.py [model] [interval] [network]
  * [model] can be CNM/CPM/ERNM/NNM
