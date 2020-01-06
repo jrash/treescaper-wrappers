@@ -4,6 +4,33 @@ See Genevieve Mount's updates to this workflow [here](https://github.com/jrash/T
 
 Collection of scripts for analyzing sets of trees with treescaper.  These scripts were used to conduct the analyses described in this [poster](https://www.math.fsu.edu/~whuang2/pdf/JRAposterEvolution2014Final.pdf) presentation given at the Evolution conference in Raleigh, NC on June, 2014. 
 
+## SeqSimRep.sh
+
+Makes a folder for each sequence length and branch length pair specified.  Makes a folder for each rep.  Simulates sequences with conflicting signal and then does a mr bayes and garli bootstrap analysis.
+
+Usage: SeqSimRep.sh [sequence lengths] [scale of branch lengths] [rep number from] [rep number to]
+
+Example: ./SeqSimRep.sh '1000 5000' '.1 1' 1 5
+ * Produces 4 folders - sequence length 1000 with .1 and 1 branch length scales and 5000 with .1 and 1 branch length scales
+ * Each folder contains replicates 1-5
+
+Input files:
+ * Tree[1/2].phy: the guide trees used to simulate sequence alignments
+ 
+Output files:
+ * SimSeqs/Tree[1/2].seqs.nex: the sequence alignments simulated from either guide tree
+ * SimSeqs/Tree.cat.seqs.nex: Both sequence alignments concatenated together
+
+ * Bayes/Tree.cat.seqs.nex.burn.t: the set of posterior trees from the 5 runs, with burnin removed
+ * Bayes/Tree.cat.seqs.nex.con.tre: the consensus tree of the above tree set
+ * Bayes/Tree.con.Garli.${1}bp${2}L.pdf: pdf of the consensus tree
+
+ * MLboot/Tree.cat.seqs.nex.boot.tre:  The bootstrap tree set from the garli bootstrap analysis
+ * MLboot/Tree.cat.seqs.nex.con: the consensus tree of the above tree set
+ * MLboot/Tree.con.Garli.${1}bp${2}L.pdf: pdf of the consensus tree
+
+ * MLbest/Tree.cat.seqs.nex.best.tre: garli maximum likelihood tree
+
 ## treescaperWrapperV2.py
 
 Runs community detection on the tree set with range of lambda values specified. Finds the plateau of communities detected and prints to ouput files. The input tree set needs to be a newick file named "all_trees.new".
