@@ -1,8 +1,8 @@
 # treescaper-wrappers
 
-See Genevieve Mount's updates to this workflow [here](https://github.com/jrash/TreeScaper_wrappers_2017).
-
 Collection of scripts for analyzing sets of trees with treescaper.  These scripts were used to conduct the analyses described in this [poster](https://www.math.fsu.edu/~whuang2/pdf/JRAposterEvolution2014Final.pdf) presentation given at the Evolution conference in Raleigh, NC on June, 2014. 
+
+See Genevieve Mount's updates to this workflow [here](https://github.com/jrash/TreeScaper_wrappers_2017).
 
 ## SeqSimRep.sh
 
