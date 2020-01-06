@@ -47,10 +47,10 @@ Usage: AffinityCommunities.py 'Path/To/Treeset' [model] [plateau]
 
 Output files:
 
-AffinityCom[number].nex: a nexus file of the trees in an affinity community
-AffinityCom[number].nex.con: consensus tree of an affinity community
-AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
-AffinityCommunitiesTreeCount.txt: a file to count the frequency and relative frequency of trees in each affinity community
+* AffinityCom[number].nex: a nexus file of the trees in an affinity community
+* AffinityCom[number].nex.con: consensus tree of an affinity community
+* AffinityCom[number].nex.con.pdf: pdf of consensus tree of an affinity community
+* AffinityCommunitiesTreeCount.txt: a file to count the frequency and relative frequency of trees in each affinity community
 
 # Example worklow
 
